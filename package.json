@@ -6,7 +6,10 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "run": "npm run"
+    "start": "node server.js"
   },
-  "homepage": "https://github.com/anabellchan/csv-report-generator#readme"
+  "homepage": "https://github.com/anabellchan/csv-report-generator#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
