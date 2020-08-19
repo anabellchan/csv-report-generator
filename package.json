@@ -1,0 +1,12 @@
+{
+  "name": "csv-report-generator",
+  "version": "1.0.0",
+  "description": "Generates CSV reports from JSON data",
+  "author": "Anabell Chiu-Carag",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "run": "npm run"
+  },
+  "homepage": "https://github.com/anabellchan/csv-report-generator#readme"
+}
