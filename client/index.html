@@ -5,12 +5,11 @@
   </head>
   <body>
     <div>
-      <form action="/jsontocsv" method="POST">
-        <!-- <label for="team_name">Enter name: </label> -->
-        <!-- <input id="team_name" type="text" name="name_field" value="Default name for team."> -->
-        <textarea id="json" name="json" rows="20" cols="20"></textarea>
-        <input type="submit" value="Submit"></input>
+      <form action="/jsontocsv" method="POST" name="form-name" enctype="application/json">
+        <textarea id="textarea-json" name="textarea-json" rows="20" cols="20"></textarea>
+        <input type="submit" value="Submit" onclick=prettyPrint()></input>
       </form>
     </div>
   </body>
+  <script src="client.js"></script>
 </html>
