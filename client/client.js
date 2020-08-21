@@ -4,3 +4,4 @@ function prettyPrint() {
   let pretty = JSON.stringify(obj, undefine, 4);
   document.querySelector('textarea-json').textContent = pretty;
 }
+

@@ -5,11 +5,12 @@
   </head>
   <body>
     <div>
-      <form action="/jsontocsv" method="POST" name="form-name" enctype="application/json">
+      <form action="/" method="POST" name="form-name" enctype="application/json">
         <textarea id="textarea-json" name="textarea-json" rows="20" cols="20"></textarea>
         <input type="submit" value="Submit" onclick=prettyPrint()></input>
       </form>
+      <div id="csv-report">
+      </div>
     </div>
   </body>
-  <script src="client.js"></script>
 </html>
