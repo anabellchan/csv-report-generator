@@ -7,6 +7,7 @@ const render = function render(json, csv) {
   fs.writeFileSync('./client/index.html', html, { encoding: 'utf-8' });
 }
 const initialize = function initialize() {
+  console.log('initializing...');
   let html = fs.readFileSync('./views/index.html', { encoding: 'utf-8' });
   fs.writeFileSync('./client/index.html', html, { encoding: 'utf-8' });
 }

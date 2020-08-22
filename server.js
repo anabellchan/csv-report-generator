@@ -6,7 +6,7 @@ const parser = require('body-parser')
 const path = require('path');
 const fs = require('fs');
 const converter = require('./converter.js');
-const { initialize, render } = require('./render.js');
+const render = require('./render.js');
 
 app.use(express.static('client'));
 app.use(parser.urlencoded({ extended: true }));
@@ -14,19 +14,18 @@ app.use(parser.json());
 
 
 app.get('/', (req, res) => {
-  initialize();
+  console.log('home page');
+  render.initialize();
   res.send();
 })
 
 app.post('/', (req, res) => {
   var jsonStr = req.body['textarea-json'];
   var jsonObj = JSON.parse(jsonStr);
-  console.log(jsonObj);
   // convert text to csv
   let csv = converter(jsonObj);
   // render csv to index.html
-  console.log(csv);
-  render(jsonStr, csv);
+  render.render(jsonStr, csv);
   res.sendFile(__dirname + '/client/');
 })
 
