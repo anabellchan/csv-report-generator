@@ -6,7 +6,7 @@ const parser = require('body-parser')
 const path = require('path');
 const fs = require('fs');
 const converter = require('./converter.js');
-const render = require('./render.js');
+const { initialize, render } = require('./render.js');
 
 app.use(express.static('client'));
 app.use(parser.urlencoded({ extended: true }));
@@ -14,6 +14,7 @@ app.use(parser.json());
 
 
 app.get('/', (req, res) => {
+  initialize();
   res.send();
 })
 
@@ -25,7 +26,7 @@ app.post('/', (req, res) => {
   let csv = converter(jsonObj);
   // render csv to index.html
   console.log(csv);
-  render.render(csv);
+  render(jsonStr, csv);
   res.sendFile(__dirname + '/client/');
 })
 
