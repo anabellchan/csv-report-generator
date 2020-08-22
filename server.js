@@ -21,7 +21,7 @@ app.post('/', (req, res) => {
   var jsonObj = JSON.parse(jsonStr);
   console.log(jsonObj);
   // convert text to csv
-  let csv = converter.toCsv(jsonObj);
+  let csv = converter.converter(jsonObj);
   // render csv to index.html
   console.log(csv);
 
