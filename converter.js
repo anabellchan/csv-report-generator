@@ -6,7 +6,7 @@ You may also assume that child records in the JSON will always be in a property 
 
 // const sample = require('./sample.json');
 
-exports.converter = function converter(json, output, keys) {
+const converter = (json, output, keys) => {
   let csv = output ? output : '';
   let attributes = keys ? keys : [];
 
@@ -41,3 +41,5 @@ const getValues = (json, csv, attributes) => {
 }
 
 // console.log(converter(sample));
+
+module.exports = converter;
