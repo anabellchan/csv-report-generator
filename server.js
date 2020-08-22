@@ -14,8 +14,6 @@ app.use(parser.json());
 
 
 app.get('/', (req, res) => {
-  console.log('home page');
-  render.initialize();
   res.send();
 })
 
@@ -24,9 +22,7 @@ app.post('/', (req, res) => {
   var jsonObj = JSON.parse(jsonStr);
   // convert text to csv
   let csv = converter(jsonObj);
-  // render csv to index.html
-  render.render(jsonStr, csv);
-  res.sendFile(__dirname + '/client/');
+  res.send(csv);
 })
 
 app.listen(port, () => {
