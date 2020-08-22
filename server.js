@@ -1,11 +1,11 @@
 const express = require('express')
 const app = express()
 const port = 1234
+
 const parser = require('body-parser')
 const path = require('path');
 const fs = require('fs');
-const Promise = require('bluebird');
-
+const converter = require('./converter.js');
 
 app.use(express.static('client'));
 app.use(parser.urlencoded({ extended: true }));
@@ -21,8 +21,9 @@ app.post('/', (req, res) => {
   var jsonObj = JSON.parse(jsonStr);
   console.log(jsonObj);
   // convert text to csv
+  let csv = converter.toCsv(jsonObj);
   // render csv to index.html
-  File.
+  console.log(csv);
 
   res.sendFile(__dirname + '/client/');
 })
